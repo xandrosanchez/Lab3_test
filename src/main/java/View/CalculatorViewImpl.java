@@ -1,15 +1,14 @@
-package org.example;
+package View;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.*;
 
 public class CalculatorViewImpl extends JFrame implements CalculatorView {
 
-
     @Override
-    public void printResult(TextField textField, String result) {
+    public String printResult(TextField textField, String result) {
         textField.setText(result);
-        System.out.println(result);
+        return result;
     }
 
     @Override

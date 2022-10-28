@@ -1,4 +1,4 @@
-package org.example;
+package App;
 
 import javax.swing.JFrame;
 

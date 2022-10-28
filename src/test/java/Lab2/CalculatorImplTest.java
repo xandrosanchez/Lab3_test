@@ -1,5 +1,6 @@
-package org.example;
+package Lab2;
 
+import Calculator.CalculatorImpl;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,7 +34,7 @@ class CalculatorImplTest {
     @org.junit.jupiter.api.Test
     void divide() {
         CalculatorImpl calculator = new CalculatorImpl();
-        double actual = calculator.divide(10,0);
+        double actual = calculator.divide(10,2);
         double expected = 5;
         assertEquals(expected,actual);
     }

@@ -1,4 +1,6 @@
-package org.example;
+package Calculator;
+
+import View.CalculatorViewImpl;
 
 public class MetodCalc {
     public double calc(double n1, String op, double n2) {

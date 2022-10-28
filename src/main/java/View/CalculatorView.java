@@ -1,10 +1,10 @@
-package org.example;
+package View;
 
 import java.awt.*;
 
 public interface CalculatorView {
 
-    void printResult(TextField textField, String result);
+    String printResult(TextField textField, String result);
 
     void displayError(String message);
 

@@ -1,20 +1,25 @@
-package org.example;
+package App;
 
-import java.awt.Font;
-import java.awt.TextField;
+import Calculator.MetodCalc;
+import Presenter.CalculatorPresenterImpl;
+import View.CalculatorViewImpl;
+import FileWorker.FileWorker;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JPanel;
 
 public class JPanelApp extends JPanel {
     double firstArgument = 0;
     double secondArgument = 0;
     String op = "";
 
+    double result;
+
     public JPanelApp() {
         CalculatorViewImpl calculatorView = new CalculatorViewImpl();
+
         try {
             setLayout(null);
             // Specifies the position of the element
@@ -271,8 +276,11 @@ public class JPanelApp extends JPanel {
                     String strOp = op;
 
                     MetodCalc mc = new MetodCalc();
-                    String strRes = String.valueOf(mc.calc(num, strOp, num1));
-                    calculatorView.printResult(txt1,strRes);
+                    FileWorker fileWorker = new FileWorker();
+                    String res = String.valueOf(mc.calc(num, strOp, num1));
+                    fileWorker.setResult(calculatorView.printResult(txt1, res));
+
+
                 }
             });
 
@@ -288,4 +296,9 @@ public class JPanelApp extends JPanel {
             calculatorView.displayError(exception.toString());
         }
     }
+
+    public void start() {
+        new JFrameApp();
+    }
+
 }
