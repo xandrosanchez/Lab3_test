@@ -2,24 +2,18 @@ package Calculator;
 
 
 import Exceptions.IncorrectInputException;
-import View.CalculatorViewImpl;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class CalculatorImpl implements Calculator {
 
-    private double firstArgument;
-    private double secondArgument;
+    private int firstArgument;
+    private int secondArgument;
 
 
     public double getSecondArgument() {
         return secondArgument;
     }
 
-    public void setSecondArgument(double secondArgument) throws IncorrectInputException {
+    public void setSecondArgument(int secondArgument) throws IncorrectInputException {
         this.secondArgument = secondArgument;
     }
 
@@ -27,11 +21,11 @@ public class CalculatorImpl implements Calculator {
         return firstArgument;
     }
 
-    public void setFirstArgument(double firstArgument) {
+    public void setFirstArgument(int firstArgument) {
         this.firstArgument = firstArgument;
     }
 
-    public void startCalculator() {
+    /*public void startCalculator() {
         try {
             CalculatorViewImpl calculatorView = new CalculatorViewImpl();
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -70,25 +64,25 @@ public class CalculatorImpl implements Calculator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     @Override
-    public double sum(double a, double b) {
+    public int sum(int a, int b) {
         return a + b;
     }
 
     @Override
-    public double subtract(double a, double b) {
+    public int subtract(int a, int b) {
         return a - b;
     }
 
     @Override
-    public double multiply(double a, double b) {
+    public int multiply(int a, int b) {
         return a * b;
     }
 
     @Override
-    public double divide(double a, double b) throws ArithmeticException {
+    public int divide(int a, int b) throws ArithmeticException {
         if (Math.abs(b) < Math.pow(10, -8)) {
             throw new ArithmeticException();
         }

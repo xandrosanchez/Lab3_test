@@ -2,11 +2,11 @@ package Calculator;
 
 public interface Calculator {
 
-    double sum(double a, double b);
+    int sum(int a, int b);
 
-    double subtract(double a, double b);
+    int subtract(int a, int b);
 
-    double multiply(double a, double b);
+    int multiply(int a, int b);
 
-    double divide(double a, double b);
+    int divide(int a, int b);
 }

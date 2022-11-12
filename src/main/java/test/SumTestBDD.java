@@ -1,38 +1,40 @@
 package test;
 
-import Calculator.CalculatorImpl;
+import App.JPanelApp;
+import UsingButtons.ButtonService;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;
 
+import java.awt.*;
+
 public class SumTestBDD {
-    private double firstNumber;
-    private double secondNumber;
 
-    private final CalculatorImpl calculator = new CalculatorImpl();
+    public String firstNumber;
+    public String secondNumber;
 
-    private int actual;
+    JPanelApp jPanelApp = new JPanelApp();
+    ButtonService buttonService = new ButtonService();
 
     @Given("a $firstNumber and $secondNumber")
-    public void getFirstNumber(double firstNumber, double secondNumber) {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
+    public void start(String first, String second){
+        firstNumber = first;
+        secondNumber = second;
     }
 
     @When("user call method $grid")
-    public void Sum(String grid) {
-        switch (grid) {
-            case "+" -> this.actual = (int) calculator.sum(firstNumber, secondNumber);
-            case "-" -> this.actual = (int) calculator.divide(firstNumber, secondNumber);
-            case "*" -> this.actual = (int) calculator.multiply(firstNumber, secondNumber);
-            case "/" -> this.actual = (int) calculator.subtract(firstNumber, secondNumber);
-        }
+    public void operation(String grid) throws AWTException {
+        jPanelApp.start();
+        buttonService.buttonNumbersClick(firstNumber);
+        buttonService.buttonCalculationClick(grid);
+        buttonService.buttonNumbersClick(secondNumber);
+        buttonService.buttonCalculationClick("=");
     }
 
     @Then("get the $result of two numbers")
     public void trueResult(double result) {
-        Assert.assertEquals(this.actual, result, 0.0);
+        Assert.assertEquals(result,jPanelApp.getValue(),0.0);
 
     }
 }

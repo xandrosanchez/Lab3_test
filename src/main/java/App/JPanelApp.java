@@ -3,7 +3,6 @@ package App;
 import Calculator.MetodCalc;
 import Presenter.CalculatorPresenterImpl;
 import View.CalculatorViewImpl;
-import FileWorker.FileWorker;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,11 +10,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class JPanelApp extends JPanel {
-    double firstArgument = 0;
-    double secondArgument = 0;
+    int firstArgument = 0;
+    int secondArgument = 0;
     String op = "";
 
-    double result;
+    private static int value;
+
+    public void setValue(int aValue){
+        value = aValue;
+    }
+
+    public int getValue(){
+        return value;
+    }
+
+    TextField txt1 = new TextField();
 
     public JPanelApp() {
         CalculatorViewImpl calculatorView = new CalculatorViewImpl();
@@ -23,7 +32,6 @@ public class JPanelApp extends JPanel {
         try {
             setLayout(null);
             // Specifies the position of the element
-            final TextField txt1 = new TextField();
             txt1.setBounds(10, 10, 235, 25);
 
             JButton button0 = new JButton("0");
@@ -109,9 +117,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 1);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -121,9 +129,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 2);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -133,9 +141,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 3);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -145,9 +153,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 4);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -157,9 +165,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 5);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -169,9 +177,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 6);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -181,9 +189,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 7);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -193,9 +201,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 8);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -205,9 +213,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 9);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -217,9 +225,9 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     txt1.setText(txt1.getText() + 0);
                     if (firstArgument == 0) {
-                        firstArgument = Double.parseDouble(txt1.getText());
+                        firstArgument = (int) Double.parseDouble(txt1.getText());
                     } else {
-                        secondArgument = Double.parseDouble(txt1.getText());
+                        secondArgument = (int) Double.parseDouble(txt1.getText());
                     }
                 }
             });
@@ -229,7 +237,7 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     CalculatorPresenterImpl calculatorPresenter = new CalculatorPresenterImpl();
                     calculatorPresenter.onPlusClicked();
-                    firstArgument = Double.parseDouble(txt1.getText());
+                    firstArgument = (int) Double.parseDouble(txt1.getText());
                     txt1.setText("");
                     op = "+";
                 }
@@ -240,7 +248,7 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     CalculatorPresenterImpl calculatorPresenter = new CalculatorPresenterImpl();
                     calculatorPresenter.onMinusClicked();
-                    firstArgument = Double.parseDouble(txt1.getText());
+                    firstArgument = (int) Double.parseDouble(txt1.getText());
                     txt1.setText("");
                     op = "-";
                 }
@@ -251,7 +259,7 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     CalculatorPresenterImpl calculatorPresenter = new CalculatorPresenterImpl();
                     calculatorPresenter.onMultiplyClicked();
-                    firstArgument = Double.parseDouble(txt1.getText());
+                    firstArgument = (int) Double.parseDouble(txt1.getText());
                     txt1.setText("");
                     op = "*";
                 }
@@ -262,7 +270,7 @@ public class JPanelApp extends JPanel {
                 public void actionPerformed(ActionEvent arg1) {
                     CalculatorPresenterImpl calculatorPresenter = new CalculatorPresenterImpl();
                     calculatorPresenter.onDivideClicked();
-                    firstArgument = Double.parseDouble(txt1.getText());
+                    firstArgument = (int) Double.parseDouble(txt1.getText());
                     txt1.setText("");
                     op = "/";
                 }
@@ -271,23 +279,19 @@ public class JPanelApp extends JPanel {
             buttonResult.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
-                    double num = firstArgument;
-                    double num1 = secondArgument;
+                    int num = firstArgument;
+                    int num1 = secondArgument;
                     String strOp = op;
-
                     MetodCalc mc = new MetodCalc();
-                    FileWorker fileWorker = new FileWorker();
-                    String res = String.valueOf(mc.calc(num, strOp, num1));
-                    fileWorker.setResult(calculatorView.printResult(txt1, res));
-
-
+                    txt1.setText(String.valueOf(mc.calc(num, strOp, num1)));
+                    setValue(mc.calc(num, strOp, num1));
                 }
             });
 
             buttonC.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent argC) {
-                    firstArgument = Double.parseDouble(txt1.getText());
+                    firstArgument = (int) Double.parseDouble(txt1.getText());
                     txt1.setText("");
                     op = "c";
                 }

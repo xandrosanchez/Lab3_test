@@ -1,6 +1,4 @@
-package org.example;
-
-import org.example.CalculatorPresenter;
+package Presenter;
 
 public class CalculatorPresenterImpl implements CalculatorPresenter {
     @Override
